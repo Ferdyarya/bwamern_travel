@@ -1,6 +1,7 @@
 import React from "react";
 
 import TestimonyAccent from "assets/images/testimonial-landingpages-frame.jpg";
+import TestimonyBeta from "assets/images/testimonial-landingpages.jpg";
 
 import Star from "elements/Star";
 import Button from "elements/Button";
@@ -15,7 +16,7 @@ export default function Testimony({ data }) {
             style={{ margin: `30px 0 0 30px` }}
           >
             <img
-              src={data.imageUrl}
+              src={TestimonyBeta}
               alt="Testimonial"
               className="position-absolute"
               style={{ zIndex: 1 }}
