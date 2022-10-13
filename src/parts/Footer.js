@@ -53,7 +53,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-2">
+          <div className="col-3">
             <h6 className="mt-2">Connect Us</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
         <div className="row">
           <div className="col text-center copyrights">
-            Copyright 2019 • All rights reserved • Staycation
+            Copyright 2022 • All rights reserved • Staycation
           </div>
         </div>
       </div>

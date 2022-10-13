@@ -1,7 +1,7 @@
 import React from "react";
 
 import TestimonyAccent from "assets/images/testimonial-landingpages-frame.jpg";
-import TestimonyBeta from "assets/images/testimonial-landingpages.jpg";
+// import TestimonyBeta from "assets/images/testimonial-landingpages.jpg";
 
 import Star from "elements/Star";
 import Button from "elements/Button";
@@ -11,12 +11,9 @@ export default function Testimony({ data }) {
     <section className="container">
       <div className="row align-items-center">
         <div className="col-auto" style={{ marginRight: 60 }}>
-          <div
-            className="testimonial-hero"
-            style={{ margin: `30px 0 0 30px` }}
-          >
+          <div className="testimonial-hero" style={{ margin: `30px 0 0 30px` }}>
             <img
-              src={TestimonyBeta}
+              src={data.imageUrl}
               alt="Testimonial"
               className="position-absolute"
               style={{ zIndex: 1 }}
