@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 import propTypes from "prop-types";
 
 import Button from "elements/Button";
 import { InputNumber, InputDate } from "elements/Form";
 
-export default class BookingForm extends Component {
+class BookingForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -35,7 +36,7 @@ export default class BookingForm extends Component {
 
     if (prevState.data.date !== data.date) {
       const startDate = new Date(data.date.startDate);
-      const endDate = new Date(data.date.startDate);
+      const endDate = new Date(data.date.endDate);
       const countDuration = new Date(endDate - startDate).getDate();
       this.setState({
         data: {
@@ -44,6 +45,7 @@ export default class BookingForm extends Component {
         },
       });
     }
+
     if (prevState.data.duration !== data.duration) {
       const startDate = new Date(data.date.startDate);
       const endDate = new Date(
@@ -61,9 +63,23 @@ export default class BookingForm extends Component {
       });
     }
   }
+
+  startBooking = () => {
+    const { data } = this.state;
+    this.props.startBooking({
+      _id: this.props.itemDetails._id,
+      duration: data.duration,
+      date: {
+        startDate: data.date.startDate,
+        endDate: data.date.endDate,
+      },
+    });
+    this.props.history.push("/checkout");
+  };
+
   render() {
     const { data } = this.state;
-    const { itemDetails, startBooking } = this.props;
+    const { itemDetails } = this.props;
 
     return (
       <div className="card bordered" style={{ padding: "60px 80px" }}>
@@ -86,7 +102,7 @@ export default class BookingForm extends Component {
         />
 
         <label htmlFor="date">Pick a date</label>
-        <InputDate onchange={this.updateData} name="date" value={data.date} />
+        <InputDate onChange={this.updateData} name="date" value={data.date} />
 
         <h6
           className="text-gray-500 font-weight-light"
@@ -104,12 +120,12 @@ export default class BookingForm extends Component {
 
         <Button
           className="btn"
-          hasSghadow
+          hasShadow
           isPrimary
           isBlock
-          onClick={startBooking}
+          onClick={this.startBooking}
         >
-          Continue To Book
+          Continue to Book
         </Button>
       </div>
     );
@@ -120,3 +136,5 @@ BookingForm.propTypes = {
   itemDetails: propTypes.object,
   startBooking: propTypes.func,
 };
+
+export default withRouter(BookingForm);
