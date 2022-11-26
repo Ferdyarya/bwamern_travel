@@ -4,7 +4,7 @@ import propTypes from "prop-types";
 import "./index.scss";
 
 export default function Numbering({ style, className, data, current }) {
-  const KeysOfData = object.keys(data);
+  const KeysOfData = Object.keys(data);
   return (
     <>
       <ol className={["stepper", className].join(" ")} style={style}>

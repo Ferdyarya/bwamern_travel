@@ -1,6 +1,6 @@
 import React from "react";
 
-import { InputText } from "elements/Form";
+import { InputText } from "elements/form";
 
 export default function Bookinginformation(props) {
   const { data, ItemDetails, checkout } = props;
