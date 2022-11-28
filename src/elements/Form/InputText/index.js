@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import propTypes from "props-Types";
+import propTypes from "prop-types";
+
 
 import "./index.scss";
 

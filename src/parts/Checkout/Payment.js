@@ -1,6 +1,6 @@
 import React from "react";
 
-import { InputText, InputFile } from "elements/form";
+import { InputText, InputFile } from "elements/Form";
 
 import LogoBca from "assets/images/logo-bca.jpg";
 import LogoMandiri from "assets/images/logo-mandiri.jpg";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { InputText } from "elements/form";
+import { InputText } from "elements/Form";
 
 export default function BookingInformation(props) {
   const { data, ItemDetails, checkout } = props;
@@ -28,7 +28,7 @@ export default function BookingInformation(props) {
               </div>
               <div className="col-auto">
                 <span>
-                  ${checkout.duration * ItemDetails.price} USD
+                  ${+checkout.duration * ItemDetails.price} USD
                   <span className="text-gray-500"> Per </span>
                   {checkout.duration} {ItemDetails.unit}
                   {+checkout.duration > 1 ? "s" : ""}
