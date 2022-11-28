@@ -10,7 +10,7 @@ export default function File(props) {
     name,
     accept,
     prepend,
-    appaend,
+    append,
     outerClassName,
     inputClassName,
   } = props;
@@ -42,7 +42,7 @@ export default function File(props) {
         />
         {append && (
           <div className="input-group-append bg-gray-900">
-            <span className="input-group-text"></span>
+            <span className="input-group-text">{append}</span>
           </div>
         )}
       </div>
@@ -59,8 +59,8 @@ File.propTypes = {
   accept: propTypes.string.isRequired,
   value: propTypes.string.isRequired,
   onChange: propTypes.func.isRequired,
-  prepend: propTypes.oneOfType([propTypes, number, propTypes.string]),
-  appaend: propTypes.oneOfType([propTypes, number, propTypes.string]),
+  prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
+  appaend: propTypes.oneOfType([propTypes.number, propTypes.string]),
   placeholder: propTypes.string,
   outerClassName: propTypes.string,
   inputClassName: propTypes.string,
