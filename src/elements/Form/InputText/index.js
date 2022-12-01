@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import propTypes from "prop-types";
 
-
 import "./index.scss";
 
 export default function Text(props) {
@@ -17,7 +16,7 @@ export default function Text(props) {
     errorResponse,
   } = props;
 
-  const [HasError, setHaserror] = useState(null);
+  const [HasError, setHasError] = useState(null);
   let pattern = "";
   if (type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (type === "tel") pattern = "[0-9]*";
@@ -29,10 +28,12 @@ export default function Text(props) {
         value: event.target.value,
       },
     };
+
     if (type === "email") {
-      if (!pattern.test(event.target.value)) setHaserror(errorResponse);
-      else setHaserror(null);
+      if (!pattern.test(event.target.value)) setHasError(errorResponse);
+      else setHasError(null);
     }
+
     if (type === "tel") {
       if (event.target.validity.valid) props.onChange(target);
     } else {
@@ -55,7 +56,7 @@ export default function Text(props) {
           className={["form-control", inputClassName].join(" ")}
           value={value}
           placeholder={placeholder}
-          onchange={onChange}
+          onChange={onChange}
         />
         {append && (
           <div className="input-group-append bg-gray-900">

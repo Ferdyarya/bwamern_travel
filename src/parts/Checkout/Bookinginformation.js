@@ -40,8 +40,8 @@ export default function BookingInformation(props) {
         <div className="col-5 py-5" style={{ paddingLeft: 80 }}>
           <label htmlFor="firstName">First Name</label>
           <InputText
-            id="firstname"
-            name="firstname"
+            id="firstName"
+            name="firstName"
             value={data.firstName}
             onChange={props.onChange}
           />
